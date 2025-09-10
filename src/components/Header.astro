@@ -1,48 +1,17 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.tsx';
+import content from '../content/content.json';
 
-export interface Props {
-  lang?: string;
-}
+const currentLocale = Astro.currentLocale || 'de';
+const t = content.navbar[currentLocale] || content.navbar.de;
 
-const { lang = "de" } = Astro.props;
-
-const translations = {
-  de: {
-    home: "Startseite",
-    services: "Behandlungen",
-    about: "Über uns",
-    gallery: "Galerie",
-    contact: "Kontakt",
-    book: "Buchen"
-  },
-  en: {
-    home: "Home",
-    services: "Services",
-    about: "About",
-    gallery: "Gallery",
-    contact: "Contact",
-    book: "Book"
-  },
-  ar: {
-    home: "الرئيسية",
-    services: "الخدمات",
-    about: "من نحن",
-    gallery: "المعرض",
-    contact: "اتصل بنا",
-    book: "احجز"
-  },
-  fr: {
-    home: "Accueil",
-    services: "Services",
-    about: "À propos",
-    gallery: "Galerie",
-    contact: "Contact",
-    book: "Réserver"
+const getLocalizedPath = (path: string) => {
+  if (currentLocale === 'de') {
+    return path;
+  } else {
+    return `/${currentLocale}${path}`;
   }
 };
-
-const t = translations[lang as keyof typeof translations] || translations.de;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md transition-all duration-300">
@@ -58,20 +27,20 @@ const t = translations[lang as keyof typeof translations] || translations.de;
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
-        <a href={`/?lang=${lang}`} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.home}</a>
-        <a href={`/services?lang=${lang}`} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.services}</a>
-        <a href={`/about?lang=${lang}`} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.about}</a>
-        <a href={`/gallery?lang=${lang}`} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.gallery}</a>
-        <a href={`/contact?lang=${lang}`} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.contact}</a>
+        <a href={getLocalizedPath('/')} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.home}</a>
+        <a href={getLocalizedPath('/services')} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.services}</a>
+        <a href={getLocalizedPath('/about')} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.about}</a>
+        <a href={getLocalizedPath('/gallery')} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.gallery}</a>
+        <a href={getLocalizedPath('/contact')} class="text-white hover:text-emerald-400 transition-colors duration-300">{t.contact}</a>
       </div>
 
       <!-- Language Switcher & Book Button -->
       <div class="flex items-center space-x-4">
         <!-- Language Switcher -->
-        <LanguageSwitcher currentLang={lang} client:load />
+        <LanguageSwitcher client:load />
 
         <!-- Book Button -->
-        <a href={`/contact?lang=${lang}`} class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-full transition-colors duration-300 font-medium">
+        <a href={getLocalizedPath('/contact')} class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-full transition-colors duration-300 font-medium">
           {t.book}
         </a>
 
@@ -91,4 +60,5 @@ const t = translations[lang as keyof typeof translations] || translations.de;
     backdrop-filter: blur(10px);
   }
 </style>
+
 

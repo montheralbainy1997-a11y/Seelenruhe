@@ -1,0 +1,376 @@
+{
+  "home": {
+    "de": {
+      "title": "Willkommen bei Seelenruhe",
+      "description": "Ihre Quelle für Entspannung und Wohlbefinden.",
+      "hero_heading": "Entspannung pur",
+      "hero_subheading": "Finden Sie Ihre innere Ruhe"
+    },
+    "en": {
+      "title": "Welcome to Seelenruhe",
+      "description": "Your source for relaxation and well-being.",
+      "hero_heading": "Pure Relaxation",
+      "hero_subheading": "Find your inner peace"
+    },
+    "ar": {
+      "title": "أهلاً بك في سيلينروه",
+      "description": "مصدرك للاسترخاء والرفاهية.",
+      "hero_heading": "استرخاء تام",
+      "hero_subheading": "اكتشف سلامك الداخلي"
+    },
+    "fr": {
+      "title": "Bienvenue chez Seelenruhe",
+      "description": "Votre source de détente et de bien-être.",
+      "hero_heading": "Pure Détente",
+      "hero_subheading": "Trouvez votre paix intérieure"
+    }
+  },
+  "navbar": {
+    "de": {
+      "home": "Startseite",
+      "services": "Behandlungen",
+      "about": "Über uns",
+      "gallery": "Galerie",
+      "contact": "Kontakt",
+      "book": "Buchen"
+    },
+    "en": {
+      "home": "Home",
+      "services": "Services",
+      "about": "About",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "book": "Book"
+    },
+    "ar": {
+      "home": "الرئيسية",
+      "services": "الخدمات",
+      "about": "من نحن",
+      "gallery": "المعرض",
+      "contact": "اتصل بنا",
+      "book": "احجز"
+    },
+    "fr": {
+      "home": "Accueil",
+      "services": "Services",
+      "about": "À propos",
+      "gallery": "Galerie",
+      "contact": "Contact",
+      "book": "Réserver"
+    }
+  },
+  "images": {
+    "hero_bg_1": {
+      "de": "Hintergrundbild 1: غرفة مساج هادئة مع إضاءة خافتة وشموع",
+      "en": "Background image 1: A serene massage room with dim lighting and candles",
+      "ar": "صورة خلفية 1: غرفة مساج هادئة مع إضاءة خافتة وشموع",
+      "fr": "Image de fond 1: Une salle de massage sereine avec un éclairage tamisé et des bougies"
+    },
+    "hero_bg_2": {
+      "de": "Hintergrundbild 2: شخص يتلقى تدليكًا مريحًا للظهر",
+      "en": "Background image 2: Person receiving a relaxing back massage",
+      "ar": "صورة خلفية 2: شخص يتلقى تدليكًا مريحًا للظهر",
+      "fr": "Image de fond 2: Personne recevant un massage relaxant du dos"
+    },
+    "hero_bg_3": {
+      "de": "Hintergrundbild 3: أدوات سبا ومساج مرتبة بشكل فني",
+      "en": "Background image 3: Artistically arranged spa and massage tools",
+      "ar": "صورة خلفية 3: أدوات سبا ومساج مرتبة بشكل فني",
+      "fr": "Image de fond 3: Outils de spa et de massage artistiquement arrangés"
+    },
+    "service_1_image": {
+      "de": "صورة لتدليك بالروائح العطرية",
+      "en": "Image of aromatherapy massage",
+      "ar": "صورة لتدليك بالروائح العطرية",
+      "fr": "Image de massage aromathérapie"
+    },
+    "service_2_image": {
+      "de": "صورة لتدليك بالأحجار الساخنة",
+      "en": "Image of hot stone massage",
+      "ar": "صورة لتدليك بالأحجار الساخنة",
+      "fr": "Image de massage aux pierres chaudes"
+    },
+    "service_3_image": {
+      "de": "صورة لعلاج الوجه",
+      "en": "Image of facial treatment",
+      "ar": "صورة لعلاج الوجه",
+      "fr": "Image de soin du visage"
+    },
+    "service_4_image": {
+      "de": "صورة لطقوس العافية",
+      "en": "Image of wellness ritual",
+      "ar": "صورة لطقوس العافية",
+      "fr": "Image de rituel bien-être"
+    },
+    "about_image": {
+      "de": "صورة لمركز سيليينروه الصحي",
+      "en": "Image of Seelenruhe Wellness Center",
+      "ar": "صورة لمركز سيليينروه الصحي",
+      "fr": "Image du centre de bien-être Seelenruhe"
+    }
+  },
+  "services_page": {
+    "de": {
+      "title": "Unsere Behandlungen",
+      "description": "Entdecken Sie unser vielfältiges Angebot an Massagen und Wellness-Behandlungen.",
+      "heading": "Unsere Behandlungen",
+      "service_1_title": "Aromatherapie-Massage",
+      "service_1_description": "Eine entspannende Massage mit ätherischen Ölen.",
+      "service_2_title": "Hot Stone Massage",
+      "service_2_description": "Tiefenentspannung mit warmen Steinen.",
+      "cta": "Alle Behandlungen ansehen",
+      "view_details_aria": "Details anzeigen"
+    },
+    "en": {
+      "title": "Our Services",
+      "description": "Discover our diverse range of massages and wellness treatments.",
+      "heading": "Our Services",
+      "service_1_title": "Aromatherapy Massage",
+      "service_1_description": "A relaxing massage with essential oils.",
+      "service_2_title": "Hot Stone Massage",
+      "service_2_description": "Deep relaxation with warm stones.",
+      "cta": "View All Treatments",
+      "view_details_aria": "View details"
+    },
+    "ar": {
+      "title": "خدماتنا",
+      "description": "اكتشف مجموعتنا المتنوعة من علاجات المساج والعافية.",
+      "heading": "خدماتنا",
+      "service_1_title": "مساج العلاج العطري",
+      "service_1_description": "مساج مريح بالزيوت العطرية.",
+      "service_2_title": "Hot Stone Massage",
+      "service_2_description": "استرخاء عميق بالأحجار الدافئة.",
+      "cta": "عرض جميع العلاجات",
+      "view_details_aria": "عرض التفاصيل"
+    },
+    "fr": {
+      "title": "Nos Services",
+      "description": "Découvrez notre gamme variée de massages et de soins de bien-être.",
+      "heading": "Nos Services",
+      "service_1_title": "Massage Aromathérapie",
+      "service_1_description": "Un massage relaxant aux huiles essentielles.",
+      "service_2_title": "Massage aux Pierres Chaudes",
+      "service_2_description": "Détente profonde avec des pierres chaudes.",
+      "cta": "Voir Tous les Soins",
+      "view_details_aria": "Voir les détails"
+    }
+  },
+  "services_data": [
+    {
+      "de": {
+        "title": "Aromatherapie Massage",
+        "description": "Entspannende Ganzkörpermassage mit natürlichen ätherischen Ölen",
+        "duration": "60-90 Min",
+        "image": "/images/shn3QeToechG.jpg"
+      },
+      "en": {
+        "title": "Aromatherapy Massage",
+        "description": "Relaxing full-body massage with natural essential oils",
+        "duration": "60-90 Min",
+        "image": "/images/shn3QeToechG.jpg"
+      },
+      "ar": {
+        "title": "مساج العلاج العطري",
+        "description": "مساج مريح للجسم بالكامل بالزيوت الطبيعية العطرية",
+        "duration": "60-90 دقيقة",
+        "image": "/images/shn3QeToechG.jpg"
+      },
+      "fr": {
+        "title": "Massage Aromathérapie",
+        "description": "Un massage relaxant du corps entier aux huiles essentielles naturelles",
+        "duration": "60-90 Min",
+        "image": "/images/shn3QeToechG.jpg"
+      }
+    },
+    {
+      "de": {
+        "title": "Hot Stone Therapie",
+        "description": "Tiefenwirksame Entspannung mit warmen Vulkansteinen",
+        "duration": "75 Min",
+        "image": "/images/80ul2YqJMQWo.jpg"
+      },
+      "en": {
+        "title": "Hot Stone Therapy",
+        "description": "Deep relaxation with warm volcanic stones",
+        "duration": "75 Min",
+        "image": "/images/80ul2YqJMQWo.jpg"
+      },
+      "ar": {
+        "title": "علاج الأحجار الساخنة",
+        "description": "استرخاء عميق بأحجار بركانية دافئة",
+        "duration": "75 دقيقة",
+        "image": "/images/80ul2YqJMQWo.jpg"
+      },
+      "fr": {
+        "title": "Thérapie aux Pierres Chaudes",
+        "description": "Relaxation profonde avec des pierres volcaniques chaudes",
+        "duration": "75 Min",
+        "image": "/images/80ul2YqJMQWo.jpg"
+      }
+    },
+    {
+      "de": {
+        "title": "Gesichtsbehandlung",
+        "description": "Revitalisierende Pflege für strahlende Haut",
+        "duration": "60 Min",
+        "image": "/images/BzVVYLLNhgiu.jpg"
+      },
+      "en": {
+        "title": "Facial Treatment",
+        "description": "Revitalizing care for radiant skin",
+        "duration": "60 Min",
+        "image": "/images/BzVVYLLNhgiu.jpg"
+      },
+      "ar": {
+        "title": "علاج الوجه",
+        "description": "عناية منعشة لبشرة مشرقة",
+        "duration": "60 دقيقة",
+        "image": "/images/BzVVYLLNhgiu.jpg"
+      },
+      "fr": {
+        "title": "Soin du Visage",
+        "description": "Soin revitalisant pour une peau éclatante",
+        "duration": "60 Min",
+        "image": "/images/BzVVYLLNhgiu.jpg"
+      }
+    },
+    {
+      "de": {
+        "title": "Wellness Ritual",
+        "description": "Ganzheitliches Entspannungserlebnis für Körper und Geist",
+        "duration": "120 Min",
+        "image": "/images/zV3cG7qJYxN3.jpg"
+      },
+      "en": {
+        "title": "Wellness Ritual",
+        "description": "Holistic relaxation experience for body and mind",
+        "duration": "120 Min",
+        "image": "/images/zV3cG7qJYxN3.jpg"
+      },
+      "ar": {
+        "title": "طقوس العافية",
+        "description": "تجربة استرخاء شاملة للجسم والعقل",
+        "duration": "120 دقيقة",
+        "image": "/images/zV3cG7qJYxN3.jpg"
+      },
+      "fr": {
+        "title": "Rituel Bien-être",
+        "description": "Expérience de relaxation holistique pour le corps et l\"esprit",
+        "duration": "120 Min",
+        "image": "/images/zV3cG7qJYxN3.jpg"
+      }
+    }
+  ],
+  "about": {
+    "de": {
+      "title": "Willkommen bei Seelenruhe",
+      "subtitle": "Ihr Refugium für Körper, Geist und Seele",
+      "description": "In unserem exklusiven Wellness-Zentrum verbinden wir traditionelle Heilmethoden mit modernen Spa-Techniken. Seit über 15 Jahren schaffen wir einen Ort der Ruhe und Regeneration, wo Sie dem Alltag entfliehen und neue Energie tanken können.",
+      "features": [
+        {
+          "title": "Natürliche Behandlungen",
+          "description": "Ausschließlich biologische und nachhaltige Produkte"
+        },
+        {
+          "title": "Erfahrene Therapeuten",
+          "description": "Zertifizierte Experten mit langjähriger Erfahrung"
+        },
+        {
+          "title": "Individuelle Betreuung",
+          "description": "Maßgeschneiderte Behandlungen für Ihre Bedürfnisse"
+        }
+      ],
+      "stats": [
+        { "number": "15+", "label": "Jahre Erfahrung" },
+        { "number": "5000+", "label": "Zufriedene Kunden" },
+        { "number": "25+", "label": "Behandlungsarten" },
+        { "number": "100%", "label": "Natürliche Produkte" }
+      ],
+      "certified_title": "Zertifiziert",
+      "certified_subtitle": "Premium Wellness"
+    },
+    "en": {
+      "title": "Welcome to Seelenruhe",
+      "subtitle": "Your refuge for body, mind and soul",
+      "description": "In our exclusive wellness center, we combine traditional healing methods with modern spa techniques. For over 15 years, we have created a place of peace and regeneration where you can escape everyday life and recharge your energy.",
+      "features": [
+        {
+          "title": "Natural Treatments",
+          "description": "Exclusively organic and sustainable products"
+        },
+        {
+          "title": "Experienced Therapists",
+          "description": "Certified experts with years of experience"
+        },
+        {
+          "title": "Individual Care",
+          "description": "Customized treatments for your needs"
+        }
+      ],
+      "stats": [
+        { "number": "15+", "label": "Years Experience" },
+        { "number": "5000+", "label": "Happy Clients" },
+        { "number": "25+", "label": "Treatment Types" },
+        { "number": "100%", "label": "Natural Products" }
+      ],
+      "certified_title": "Certified",
+      "certified_subtitle": "Premium Wellness"
+    },
+    "ar": {
+      "title": "مرحباً بكم في سيلينروه",
+      "subtitle": "ملاذكم للجسد والعقل والروح",
+      "description": "في مركز العافية الحصري لدينا، نجمع بين طرق الشفاء التقليدية وتقنيات السبا الحديثة. منذ أكثر من 15 عاماً، أنشأنا مكاناً للسلام والتجديد حيث يمكنكم الهروب من الحياة اليومية وإعادة شحن طاقتكم.",
+      "features": [
+        {
+          "title": "علاجات طبيعية",
+          "description": "منتجات عضوية ومستدامة حصرياً"
+        },
+        {
+          "title": "معالجون ذوو خبرة",
+          "description": "خبراء معتمدون بسنوات من الخبرة"
+        },
+        {
+          "title": "رعاية فردية",
+          "description": "علاجات مخصصة لاحتياجاتكم"
+        }
+      ],
+      "stats": [
+        { "number": "15+", "label": "سنة خبرة" },
+        { "number": "5000+", "label": "عميل سعيد" },
+        { "number": "25+", "label": "نوع علاج" },
+        { "number": "100%", "label": "منتجات طبيعية" }
+      ],
+      "certified_title": "معتمد",
+      "certified_subtitle": "جودة ممتازة"
+    },
+    "fr": {
+      "title": "Bienvenue chez Seelenruhe",
+      "subtitle": "Votre refuge pour le corps, l'esprit et l'âme",
+      "description": "Dans notre centre de bien-être exclusif, nous combinons les méthodes de guérison traditionnelles avec les techniques de spa modernes. Depuis plus de 15 ans, nous avons créé un lieu de paix et de régénération où vous pouvez échapper au quotidien et recharger votre énergie.",
+      "features": [
+        {
+          "title": "Soins Naturels",
+          "description": "Produits exclusivement biologiques et durables"
+        },
+        {
+          "title": "Thérapeutes Expérimentés",
+         "description": "Experts certifiés avec des années d'expérience"
+        },
+        {
+          "title": "Soins Individuels",
+          "description": "Traitements personnalisés pour vos besoins"
+        }
+      ],
+      "stats": [
+       { "number": "15+", "label": "Années d'Expérience" },
+        { "number": "5000+", "label": "Clients Satisfaits" },
+        { "number": "25+", "label": "Types de Soins" },
+        { "number": "100%", "label": "Produits Naturels" }
+      ],
+      "certified_title": "Certifié",
+      "certified_subtitle": "Bien-être Premium"
+    }
+  }
+}
+
+

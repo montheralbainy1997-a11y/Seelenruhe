@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-interface LanguageSwitcherProps {
-  currentLang: string;
-}
-
-const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang }) => {
+const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState("de"); // Default to 'de'
+
+  useEffect(() => {
+    // Get current locale from window.location.pathname
+    const pathParts = window.location.pathname.split("/").filter(Boolean);
+    let lang = "de"; // Default locale
+    if (pathParts.length > 0 && ['en', 'ar', 'fr'].includes(pathParts[0])) {
+      lang = pathParts[0];
+    }
+    setCurrentLang(lang);
+  }, []);
 
   const languages = [
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
@@ -17,9 +24,26 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang }) => {
   const currentLanguage = languages.find(lang => lang.code === currentLang) || languages[0];
 
   const handleLanguageChange = (langCode: string) => {
-    const url = new URL(window.location.href);
-    url.searchParams.set('lang', langCode);
-    window.location.href = url.toString();
+    const currentPath = window.location.pathname;
+    const pathParts = currentPath.split('/').filter(Boolean);
+    let newPath = '';
+
+    if (['en', 'ar', 'fr'].includes(currentLang)) {
+      // Remove current locale prefix if it exists
+      pathParts.shift();
+    }
+
+    if (langCode === 'de') {
+      newPath = '/' + pathParts.join('/');
+    } else {
+      newPath = `/${langCode}/` + pathParts.join('/');
+    }
+    
+    // Ensure leading slash and remove trailing slash if it's just the root
+    if (newPath === '') newPath = '/';
+    if (newPath.length > 1 && newPath.endsWith('/')) newPath = newPath.slice(0, -1);
+
+    window.location.href = newPath;
   };
 
   return (
@@ -64,4 +88,5 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLang }) => {
 };
 
 export default LanguageSwitcher;
+
 

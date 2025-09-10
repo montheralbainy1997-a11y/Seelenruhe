@@ -1,0 +1,10 @@
+
+/?lang=en /en 301
+/?lang=ar /ar 301
+/?lang=fr /fr 301
+
+/index?lang=en /en/index 301
+/index?lang=ar /ar/index 301
+/index?lang=fr /fr/index 301
+
+

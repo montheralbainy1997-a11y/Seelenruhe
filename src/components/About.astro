@@ -1,122 +1,12 @@
 ---
-export interface Props {
-  lang?: string;
-}
+import content from "../content/content.json";
 
-const { lang = "de" } = Astro.props;
+const currentLocale = Astro.currentLocale || "de";
+const t = content.about[currentLocale] || content.about.de;
 
-const translations = {
-  de: {
-    title: "Willkommen bei Seelenruhe",
-    subtitle: "Ihr Refugium für Körper, Geist und Seele",
-    description: "In unserem exklusiven Wellness-Zentrum verbinden wir traditionelle Heilmethoden mit modernen Spa-Techniken. Seit über 15 Jahren schaffen wir einen Ort der Ruhe und Regeneration, wo Sie dem Alltag entfliehen und neue Energie tanken können.",
-    features: [
-      {
-        title: "Natürliche Behandlungen",
-        description: "Ausschließlich biologische und nachhaltige Produkte"
-      },
-      {
-        title: "Erfahrene Therapeuten",
-        description: "Zertifizierte Experten mit langjähriger Erfahrung"
-      },
-      {
-        title: "Individuelle Betreuung",
-        description: "Maßgeschneiderte Behandlungen für Ihre Bedürfnisse"
-      }
-    ],
-    stats: [
-      { number: "15+", label: "Jahre Erfahrung" },
-      { number: "5000+", label: "Zufriedene Kunden" },
-      { number: "25+", label: "Behandlungsarten" },
-      { number: "100%", label: "Natürliche Produkte" }
-    ],
-    certified_title: "Zertifiziert",
-    certified_subtitle: "Premium Wellness"
-  },
-  en: {
-    title: "Welcome to Seelenruhe",
-    subtitle: "Your refuge for body, mind and soul",
-    description: "In our exclusive wellness center, we combine traditional healing methods with modern spa techniques. For over 15 years, we have created a place of peace and regeneration where you can escape everyday life and recharge your energy.",
-    features: [
-      {
-        title: "Natural Treatments",
-        description: "Exclusively organic and sustainable products"
-      },
-      {
-        title: "Experienced Therapists",
-        description: "Certified experts with years of experience"
-      },
-      {
-        title: "Individual Care",
-        description: "Customized treatments for your needs"
-      }
-    ],
-    stats: [
-      { number: "15+", label: "Years Experience" },
-      { number: "5000+", label: "Happy Clients" },
-      { number: "25+", label: "Treatment Types" },
-      { number: "100%", label: "Natural Products" }
-    ],
-    certified_title: "Certified",
-    certified_subtitle: "Premium Wellness"
-  },
-  ar: {
-    title: "مرحباً بكم في سيلينروه",
-    subtitle: "ملاذكم للجسد والعقل والروح",
-    description: "في مركز العافية الحصري لدينا، نجمع بين طرق الشفاء التقليدية وتقنيات السبا الحديثة. منذ أكثر من 15 عاماً، أنشأنا مكاناً للسلام والتجديد حيث يمكنكم الهروب من الحياة اليومية وإعادة شحن طاقتكم.",
-    features: [
-      {
-        title: "علاجات طبيعية",
-        description: "منتجات عضوية ومستدامة حصرياً"
-      },
-      {
-        title: "معالجون ذوو خبرة",
-        description: "خبراء معتمدون بسنوات من الخبرة"
-      },
-      {
-        title: "رعاية فردية",
-        description: "علاجات مخصصة لاحتياجاتكم"
-      }
-    ],
-    stats: [
-      { number: "15+", label: "سنة خبرة" },
-      { number: "5000+", label: "عميل سعيد" },
-      { number: "25+", label: "نوع علاج" },
-      { number: "100%", label: "منتجات طبيعية" }
-    ],
-    certified_title: "معتمد",
-    certified_subtitle: "جودة ممتازة"
-  },
-  fr: {
-    title: "Bienvenue chez Seelenruhe",
-    subtitle: "Votre refuge pour le corps, l'esprit et l'âme",
-    description: "Dans notre centre de bien-être exclusif, nous combinons les méthodes de guérison traditionnelles avec les techniques de spa modernes. Depuis plus de 15 ans, nous avons créé un lieu de paix et de régénération où vous pouvez échapper au quotidien et recharger votre énergie.",
-    features: [
-      {
-        title: "Soins Naturels",
-        description: "Produits exclusivement biologiques et durables"
-      },
-      {
-        title: "Thérapeutes Expérimentés",
-        description: "Experts certifiés avec des années d'expérience"
-      },
-      {
-        title: "Soins Individuels",
-        description: "Traitements personnalisés pour vos besoins"
-      }
-    ],
-    stats: [
-      { number: "15+", label: "Années d'Expérience" },
-      { number: "5000+", label: "Clients Satisfaits" },
-      { number: "25+", label: "Types de Soins" },
-      { number: "100%", label: "Produits Naturels" }
-    ],
-    certified_title: "Certifié",
-    certified_subtitle: "Bien-être Premium"
-  }
+const getImageAlt = (imageKey: string, locale: string) => {
+  return content.images[imageKey][locale] || content.images[imageKey].de;
 };
-
-const t = translations[lang as keyof typeof translations] || translations.de;
 ---
 
 <section class="py-20 bg-white">
@@ -163,7 +53,7 @@ const t = translations[lang as keyof typeof translations] || translations.de;
         <div class="relative overflow-hidden rounded-2xl">
           <img 
             src="/images/zV3cG7qJYxN3.jpg" 
-            alt="Seelenruhe Wellness Center"
+            alt={getImageAlt("about_image", currentLocale)}
             class="w-full h-[600px] object-cover"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

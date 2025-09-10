@@ -1,50 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
-import About from '../components/About.astro';
-import Footer from '../components/Footer.astro';
+export const prerender = true;
 
-// Get language from URL params with proper handling
-const url = new URL(Astro.request.url);
-const lang = url.searchParams.get('lang') || 'de';
-
-const translations = {
-  de: {
-    title: "Seelenruhe - Premium Spa & Wellness Zentrum",
-    description: "Entdecken Sie wahre Entspannung in unserem luxuriösen Wellness-Zentrum. Aromatherapie, Hot Stone Massage und individuelle Behandlungen für Körper und Seele."
-  },
-  en: {
-    title: "Seelenruhe - Premium Spa & Wellness Center",
-    description: "Discover true relaxation in our luxurious wellness center. Aromatherapy, hot stone massage and individual treatments for body and soul."
-  },
-  ar: {
-    title: "سيلينروه - مركز سبا وعافية متميز",
-    description: "اكتشف الاسترخاء الحقيقي في مركز العافية الفاخر لدينا. العلاج العطري ومساج الأحجار الساخنة والعلاجات الفردية للجسد والروح."
-  },
-  fr: {
-    title: "Seelenruhe - Centre Spa & Bien-être Premium",
-    description: "Découvrez la vraie relaxation dans notre centre de bien-être luxueux. Aromathérapie, massage aux pierres chaudes et soins individuels pour le corps et l'âme."
-  }
-};
-
-const t = translations[lang as keyof typeof translations] || translations.de;
+export function GET() {
+  return Astro.redirect("/de");
+}
 ---
 
-<Layout title={t.title} description={t.description} lang={lang}>
-	<Header lang={lang} />
-	<main>
-		<Hero lang={lang} />
-		<Services lang={lang} />
-		<About lang={lang} />
-	</main>
-	<Footer lang={lang} />
-</Layout>
 
-<style>
-	main {
-		margin: auto;
-		width: 100%;
-	}
-</style>
