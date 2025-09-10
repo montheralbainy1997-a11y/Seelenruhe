@@ -1,0 +1,223 @@
+---
+export interface Props {
+  lang?: string;
+}
+
+const { lang = "de" } = Astro.props;
+---
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background Images with Zoom Effect -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 z-10"></div>
+  
+  <!-- Background Image Carousel with Zoom -->
+  <div class="absolute inset-0 hero-bg">
+    <div class="bg-slide active zoom-in" style="background-image: url('/images/NIhhaEqBaRid.jpg')"></div>
+    <div class="bg-slide zoom-in" style="background-image: url('/images/AOkw5vEEXtp3.jpeg')"></div>
+    <div class="bg-slide zoom-in" style="background-image: url('/images/EmR0CiQ34PBS.jpg')"></div>
+  </div>
+
+  <!-- Dynamic Content -->
+  <div class="relative z-20 text-center text-white max-w-4xl mx-auto px-6 hero-content" id="hero-content">
+    <h1 class="text-5xl md:text-7xl font-light mb-6 leading-tight">
+      <span class="block opacity-0 animate-fade-in-up hero-title" style="animation-delay: 0.5s"></span>
+      <span class="block opacity-0 animate-fade-in-up text-emerald-400 hero-subtitle" style="animation-delay: 1s"></span>
+    </h1>
+    
+    <p class="text-xl md:text-2xl mb-8 opacity-0 animate-fade-in-up font-light hero-description" style="animation-delay: 1.5s">
+    </p>
+    
+    <a href="/contact" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 opacity-0 animate-fade-in-up hero-cta" style="animation-delay: 2s">
+    </a>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    transform: scale(1);
+  }
+
+  .bg-slide.active {
+    opacity: 1;
+  }
+
+  /* Zoom In Animation */
+  .zoom-in {
+    animation: zoomInEffect 8s ease-out infinite;
+  }
+
+  @keyframes zoomInEffect {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Text Animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+  }
+
+  /* Parallax effect */
+  .hero-bg {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Responsive text direction for Arabic */
+  .hero-content.rtl {
+    direction: rtl;
+  }
+
+  .hero-content.ltr {
+    direction: ltr;
+  }
+
+  .hero-content h1,
+  .hero-content p {
+    text-align: center;
+  }
+
+  /* Animation classes for React component */
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+  }
+</style>
+
+<script>
+  // Translations object
+  const translations = {
+    de: {
+      title: "Die Kunst und Wissenschaft",
+      subtitle: "reiner Blüten- und Pflanzenessenzen",
+      description: "Entdecken Sie wahre Entspannung in unserem luxuriösen Wellness-Zentrum. Lassen Sie Körper und Seele zur Ruhe kommen.",
+      cta: "Termin buchen"
+    },
+    en: {
+      title: "The art and science",
+      subtitle: "of pure flower and plant essences",
+      description: "Discover true relaxation in our luxurious wellness center. Let your body and soul find peace.",
+      cta: "Book appointment"
+    },
+    ar: {
+      title: "فن وعلم",
+      subtitle: "خلاصات الزهور والنباتات الطبيعية",
+      description: "اكتشف الاسترخاء الحقيقي في مركز العافية الفاخر لدينا. دع جسدك وروحك يجدان السلام.",
+      cta: "احجز موعد"
+    },
+    fr: {
+      title: "L'art et la science",
+      subtitle: "des essences pures de fleurs et de plantes",
+      description: "Découvrez la vraie relaxation dans notre centre de bien-être luxueux. Laissez votre corps et votre âme trouver la paix.",
+      cta: "Prendre rendez-vous"
+    }
+  };
+
+  // Function to update hero content
+  function updateHeroContent() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') || 'de';
+    const t = translations[lang] || translations.de;
+
+    // Update content
+    const titleEl = document.querySelector('.hero-title');
+    const subtitleEl = document.querySelector('.hero-subtitle');
+    const descriptionEl = document.querySelector('.hero-description');
+    const ctaEl = document.querySelector('.hero-cta');
+
+    if (titleEl) titleEl.textContent = t.title;
+    if (subtitleEl) subtitleEl.textContent = t.subtitle;
+    if (descriptionEl) descriptionEl.textContent = t.description;
+    if (ctaEl) {
+      ctaEl.textContent = t.cta;
+      ctaEl.href = `/contact?lang=${lang}`;
+    }
+
+    // Update text direction for Arabic
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+      if (lang === 'ar') {
+        heroContent.classList.add('rtl');
+        heroContent.classList.remove('ltr');
+      } else {
+        heroContent.classList.add('ltr');
+        heroContent.classList.remove('rtl');
+      }
+    }
+  }
+
+  // Background image carousel with zoom sync
+  const slides = document.querySelectorAll('.bg-slide');
+  let currentSlide = 0;
+
+  function nextSlide() {
+    // Remove active class and reset zoom
+    slides[currentSlide].classList.remove('active');
+    
+    // Move to next slide
+    currentSlide = (currentSlide + 1) % slides.length;
+    
+    // Add active class to new slide
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Initialize content on page load
+  document.addEventListener('DOMContentLoaded', updateHeroContent);
+
+  // Listen for language changes
+  window.addEventListener('popstate', updateHeroContent);
+  
+  // Check for language changes periodically
+  setInterval(updateHeroContent, 500);
+
+  // Change background every 8 seconds to sync with zoom animation
+  setInterval(nextSlide, 8000);
+
+  // Parallax effect on scroll
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector('.hero-bg');
+    if (parallax) {
+      const speed = scrolled * 0.5;
+      parallax.style.transform = `translateY(${speed}px)`;
+    }
+  });
+</script>
+
